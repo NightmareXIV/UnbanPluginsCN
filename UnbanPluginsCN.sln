@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnbanPluginsCN", "UnbanPluginsCN\UnbanPluginsCN.csproj", "{0D6CA012-06C1-4412-AB0A-AFFFC55B0834}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnbanPluginsCN", "Program\UnbanPluginsCN.csproj", "{1384CA6F-5951-45C6-B080-27E64C5D5DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0D6CA012-06C1-4412-AB0A-AFFFC55B0834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D6CA012-06C1-4412-AB0A-AFFFC55B0834}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D6CA012-06C1-4412-AB0A-AFFFC55B0834}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D6CA012-06C1-4412-AB0A-AFFFC55B0834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1384CA6F-5951-45C6-B080-27E64C5D5DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1384CA6F-5951-45C6-B080-27E64C5D5DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1384CA6F-5951-45C6-B080-27E64C5D5DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1384CA6F-5951-45C6-B080-27E64C5D5DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@
 UnbanPluginsCN现在支持作为服务运行，这意味着您不再需要担心每次都需要手动启动。
 
 ### 如何将其设置为服务：
-- 将存档解压缩到任何文件夹中（例如： C:\UnbanPluginsCN\ 、 C:\Program Files\UnbanPluginsCN\ ）
+- 将存档解压缩到任何文件夹中（例如： `C:\UnbanPluginsCN\`、`C:\Program Files\UnbanPluginsCN\`）
 - 以管理员身份运行 install_service.cmd （右键单击它）
 - 它应该安装并运行！
 - 不要同时将其作为服务和程序运行——这会导致问题。

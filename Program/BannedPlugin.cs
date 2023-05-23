@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace UnbanPluginsCN;
@@ -19,11 +19,11 @@ internal class BannedPlugin
     /// Gets plugin assembly version.
     /// </summary>
     [JsonProperty]
-    public Version AssemblyVersion { get; set; }
+    public string AssemblyVersion { get; set; }
 
     /// <summary>
     /// Gets reason for the ban.
     /// </summary>
     [JsonProperty]
-    public string Reason { get; set; }
+    [DefaultValue(null)] public string Reason { get; set; } = null;
 }

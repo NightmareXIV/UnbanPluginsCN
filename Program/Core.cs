@@ -111,20 +111,18 @@ namespace UnbanPluginsCN
             if (directory != null)
             {
                 Log($"Starting watcher on {directory}");
-                Log($"Purging all bannedplugin.json files");
-                foreach (var f in Directory.GetFiles(directory, "bannedplugin.json", SearchOption.AllDirectories))
+                Log($"processing all bannedplugin.json and cheatplugin.json files");
+                foreach (var f in Directory.GetFiles(directory, "*.json", SearchOption.AllDirectories))
                 {
                     if (Path.GetFileName(f) == "bannedplugin.json")
                     {
                         Log($"File: {f}");
-                        try
-                        {
-                            File.WriteAllText(f, "[]");
-                        }
-                        catch (Exception e)
-                        {
-                            Log(e.Message);
-                        }
+                        Scramble(f, true);
+                    }
+                    if (Path.GetFileName(f) == "cheatplugin.json")
+                    {
+                        Log($"File: {f}");
+                        Scramble(f, false);
                     }
                 }
                 watcher = new FileSystemWatcher(directory);
@@ -163,14 +161,16 @@ namespace UnbanPluginsCN
                 return;
             }
             Log($"Changed: {e.FullPath}");
-            if (e.Name.Equals("bannedplugin.json", StringComparison.OrdinalIgnoreCase))
+            if (e.Name.EndsWith("bannedplugin.json", StringComparison.OrdinalIgnoreCase))
             {
                 Log($"Is bannedplugin file, processing...");
+                Scramble(e.FullPath, true);
 
             }
-            if (e.Name.Equals("cheatplugin.json", StringComparison.OrdinalIgnoreCase))
+            if (e.Name.EndsWith("cheatplugin.json", StringComparison.OrdinalIgnoreCase))
             {
                 Log($"Is cheatplugin file, processing...");
+                Scramble(e.FullPath, false);
 
             }
         }
@@ -179,12 +179,12 @@ namespace UnbanPluginsCN
         {
             string value = $"Created: {e.FullPath}";
             Log(value);
-            if (e.Name.Equals("bannedplugin.json", StringComparison.OrdinalIgnoreCase))
+            if (e.Name.EndsWith("bannedplugin.json", StringComparison.OrdinalIgnoreCase))
             {
                 Log($"Is bannedplugin file, processing...");
                 Scramble(e.FullPath, true);
             }
-            if (e.Name.Equals("cheatplugin.json", StringComparison.OrdinalIgnoreCase))
+            if (e.Name.EndsWith("cheatplugin.json", StringComparison.OrdinalIgnoreCase))
             {
                 Log($"Is cheatplugin file, processing...");
                 Scramble(e.FullPath, false);
@@ -209,7 +209,7 @@ namespace UnbanPluginsCN
                 var data = File.ReadAllText(fullPath);
                 numPlugins = data.Split(new string[] { "\"Name\"" }, StringSplitOptions.None).Length - 1;
                 if (numPlugins <= 0) numPlugins = 1;
-                var doReplace = isConditionalPurge ? data.ContainsAny(StringComparison.OrdinalIgnoreCase, "6f3f2d2be3f289693a94a582558a88753f809a7dbc9f6061f488174aea549e9b", "Splatoon") : true;
+                var doReplace = !isConditionalPurge || data.ContainsAny(StringComparison.OrdinalIgnoreCase, "6f3f2d2be3f289693a94a582558a88753f809a7dbc9f6061f488174aea549e9b", "Splatoon");
                 if (doReplace)
                 {
                     var json = JsonConvert.DeserializeObject<List<BannedPlugin>>(data);
@@ -217,7 +217,7 @@ namespace UnbanPluginsCN
                     {
                         json[i].Name = Utils.RandomString(64);
                     }
-                    File.WriteAllText(fullPath, JsonConvert.SerializeObject(json));
+                    File.WriteAllText(fullPath, JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings() { DefaultValueHandling = DefaultValueHandling.Ignore}));
                     Log($"Writing fancy json back");
                 }
             }
@@ -227,6 +227,7 @@ namespace UnbanPluginsCN
                 try
                 {
                     File.WriteAllText(fullPath, ScrambleFallbackJson(numPlugins));
+                    Log($"Writing fallback json...");
                 }
                 catch (Exception ex2)
                 {

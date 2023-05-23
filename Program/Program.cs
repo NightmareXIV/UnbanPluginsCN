@@ -48,10 +48,10 @@ class Program
                             var directory = Path.GetDirectoryName(x.MainModule.FileName);
                             if (directory != null)
                             {
-                                Log($"Purging all bannedplugin.json files");
-                                foreach (var f in Directory.GetFiles(directory, "bannedplugin.json", SearchOption.AllDirectories))
+                                Log($"Purging all cheatplugin.json files");
+                                foreach (var f in Directory.GetFiles(directory, "cheatplugin.json", SearchOption.AllDirectories))
                                 {
-                                    if (Path.GetFileName(f) == "bannedplugin.json")
+                                    if (Path.GetFileName(f) == "cheatplugin.json")
                                     {
                                         Log($"File: {f}");
                                         try
@@ -77,7 +77,7 @@ class Program
                                 watcher.Changed += OnChanged;
                                 watcher.Created += OnCreated;
 
-                                watcher.Filter = "bannedplugin.json";
+                                watcher.Filter = "cheatplugin.json";
                                 watcher.IncludeSubdirectories = true;
                                 watcher.EnableRaisingEvents = true;
                                 x.WaitForExit();

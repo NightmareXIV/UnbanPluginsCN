@@ -2,6 +2,8 @@
  本插件用于解除中国客户端上，取消对已经被禁止的插件使用。
 
 ## 如何使用
+- 找到卫月资产文件`dalamudAssets`,一般为`%Appdata%/XIVLauncherCN/dalamudAssets`
+- 在`UnbanPluginsCN.exe`同目录创建`path.config`,并将上一步中找到的目录填写进去。
 - 在启动游戏或者启动卫月之前运行UnbanPluginsCN.exe。
 - 启动成功后你所有的插件都能正常加载了。
 

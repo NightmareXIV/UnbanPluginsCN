@@ -30,23 +30,52 @@ class Program {
         new Thread(() =>
         {
             Log("This is the beginning.");
+            string filePath = "path.config";
+            string fileContent = "";
+            try
+            {
+                fileContent = File.ReadAllText(filePath);
+                Log($"Read from config file: {fileContent}");
+            }
+            catch (Exception ex)
+            {
+                Log($"Error reading file: {ex.Message}");
+                Environment.Exit(1);
+            }
             while (true)
             {
                 try
                 {
                     Thread.Sleep(500);
-                    foreach (var x in Process.GetProcessesByName("Dalamud.Updater"))
+                    var processes = string.Join(", ", Process.GetProcesses().Where(p => p.ProcessName.Contains("Dalamud")).Select(p => p.ProcessName));
+                    if (processes.Length > 0)
+                    {
+                        Log($"Found processes: {processes}");
+                    }
+                    var crashHandlerProcesses = Process.GetProcessesByName("DalamudCrashHandler");
+                    var updaterProcesses = Process.GetProcessesByName("Dalamud.Updater");
+                    var allProcesses = crashHandlerProcesses.Concat(updaterProcesses);
+                    foreach (var x in allProcesses)
                     {
                         if (!x.HasExited && x.MainModule != null)
                         {
                             Log($"Found process: {x.MainModule.FileName}");
-                            var directory = Path.GetDirectoryName(x.MainModule.FileName);
+                            var directory = fileContent;
+                            Log($"Process Dir: {directory}");
                             if (directory != null)
                             {
-                                Log($"Purging all bannedplugin.json files");
-                                foreach (var f in Directory.GetFiles(directory, "bannedplugin.json", SearchOption.AllDirectories))
+                                Log($"Purging all bannedplugin.json and cheatplugin.json files");
+                                var bannedPluginFiles = Directory.GetFiles(directory, "bannedplugin.json", SearchOption.AllDirectories);
+                                Log($"Found {bannedPluginFiles.Length} bannedplugin.json files");
+
+                                var cheatFiles = Directory.GetFiles(directory, "cheatplugin.json", SearchOption.AllDirectories);
+                                Log($"Found {cheatFiles.Length} bannedplugin.json files");
+                                var allFiles = bannedPluginFiles.Concat(cheatFiles);
+
+                                foreach (var f in allFiles)
                                 {
-                                    if (Path.GetFileName(f) == "bannedplugin.json")
+                                    var fileName = Path.GetFileName(f);
+                                    if (fileName == "bannedplugin.json" || fileName == "cheatplugin.json")
                                     {
                                         Log($"File: {f}");
                                         try
@@ -59,6 +88,7 @@ class Program {
                                         }
                                     }
                                 }
+
                                 using var watcher = new FileSystemWatcher(directory);
 
                                 watcher.NotifyFilter = NotifyFilters.Attributes
@@ -82,7 +112,7 @@ class Program {
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Log(ex.Message);
                 }

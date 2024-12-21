@@ -52,6 +52,22 @@ namespace UnbanPluginsCN
                     try
                     {
                         Thread.Sleep(500);
+                        try
+                        {
+                            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "XIVLauncherCN", "dalamudAssets");
+                            if(Directory.Exists(path))
+                            {
+                                if(!ProcessedPathes.Contains(path))
+                                {
+                                    BeginWatcher(path);
+                                    ProcessedPathes.Add(path);
+                                }
+                            }
+                        }
+                        catch(Exception e)
+                        {
+                            Log(e.ToString());
+                        }
                         foreach (var x in Process.GetProcessesByName("Dalamud.Updater"))
                         {
                             if (!x.HasExited && x.MainModule != null)

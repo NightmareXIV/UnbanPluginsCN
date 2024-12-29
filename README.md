@@ -1,36 +1,42 @@
-# è§£é™¤CNå®¢æˆ·ç«¯Bané™åˆ¶æ’ä»¶
- æœ¬æ’ä»¶ç”¨äºè§£é™¤ä¸­å›½å®¢æˆ·ç«¯ä¸Šï¼Œå–æ¶ˆå¯¹å·²ç»è¢«ç¦æ­¢çš„æ’ä»¶ä½¿ç”¨ã€‚
+# ½â³ıCN¿Í»§¶ËBanÏŞÖÆ²å¼ş
+ ±¾²å¼şÓÃÓÚ½â³ıÖĞ¹ú¿Í»§¶ËÉÏ£¬È¡Ïû¶ÔÒÑ¾­±»½ûÖ¹µÄ²å¼şÊ¹ÓÃ¡£
 
-## å¦‚ä½•ä½¿ç”¨
-- æ‰¾åˆ°å«æœˆèµ„äº§æ–‡ä»¶`dalamudAssets`,ä¸€èˆ¬ä¸º`%Appdata%/XIVLauncherCN/dalamudAssets`
-- åœ¨`UnbanPluginsCN.exe`åŒç›®å½•åˆ›å»º`path.config`,å¹¶å°†ä¸Šä¸€æ­¥ä¸­æ‰¾åˆ°çš„ç›®å½•å¡«å†™è¿›å»ã€‚
-- åœ¨å¯åŠ¨æ¸¸æˆæˆ–è€…å¯åŠ¨å«æœˆä¹‹å‰è¿è¡ŒUnbanPluginsCN.exeã€‚
-- å¯åŠ¨æˆåŠŸåä½ æ‰€æœ‰çš„æ’ä»¶éƒ½èƒ½æ­£å¸¸åŠ è½½äº†ã€‚
+## ÈçºÎÊ¹ÓÃ
+- ÔÚÆô¶¯ÓÎÏ·»òÕßÆô¶¯ÎÀÔÂÖ®Ç°ÔËĞĞUnbanPluginsCN.exe¡£
+- °´ÕÕÅäÖÃÎÄ¼şµÄÌáÊ¾½øĞĞ²Ù×÷¡£
+- Æô¶¯³É¹¦ºóÄãËùÓĞµÄ²å¼ş¶¼ÄÜÕı³£¼ÓÔØÁË¡£
 
-## è‡ªåŠ¨å¯åŠ¨ç¨‹åº
-- UnbanPluginsCNç°åœ¨æ”¯æŒä½œä¸ºæœåŠ¡è¿è¡Œï¼Œè¿™æ„å‘³ç€æ‚¨ä¸ç”¨æ¯æ¬¡éƒ½æ‰‹åŠ¨å¯åŠ¨å®ƒã€‚
+## ×÷Îª¼Æ»®ÈÎÎñÔËĞĞ
+- ÓÒ¼üµã»÷`install.ps1`, Ñ¡ÔñÊ¹ÓÃPowerShellÔËĞĞ¡£
+- powershell»áÉêÇë¹ÜÀíÔ±È¨ÏŞ, ·ÅĞÄ,ÕâÊÇÎªÁËÄÜ¹»½«¼Æ»®ÈÎÎñĞ´ÈëÏµÍ³¡£
+- ¼Æ»®ÈÎÎñ½«»áÔÚÃ¿´ÎÓÃ»§µÇÂ½ºó×Ô¶¯ÔËĞĞ.
 
-### å¦‚ä½•å°†å…¶è®¾ç½®æˆæœåŠ¡ï¼š
-- å°†ç¨‹åºè§£å‹ç¼©åˆ°ä»»ä½•æ–‡ä»¶å¤¹ä¸­ï¼ˆä¾‹å¦‚ï¼š`C:\UnbanPluginsCN\`ï¼Œ`C:\Program Files\UnbanPlugins CN\`ï¼‰
-- ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œâ€œinstall_service.cmdâ€ï¼ˆå³é”®å•å‡»ï¼‰
-- ç®¡ç†å‘˜è¿è¡ŒæˆåŠŸåæç¤ºï¼šPress any key if you're running it as administrator.ï¼ˆæŒ‰ä¸‹ä»»æ„é”®ï¼‰
-- è‡³æ­¤å®‰è£…æˆåŠŸæ­¤æœåŠ¡ã€‚
-- è¯·ä¸è¦åŒæ—¶å°†å…¶ä½œä¸ºæœåŠ¡å’Œç¨‹åºè¿è¡Œï¼Œè¿™ä¼šå¯¼è‡´ç¨‹åºå’ŒæœåŠ¡å†²çªã€‚
+## É¾³ı¼Æ»®ÈÎÎñ
+- ÓÒ¼üµã»÷`uninstall.ps1`, Ñ¡ÔñÊ¹ÓÃPowerShellÔËĞĞ¡£
+- powershell»áÉêÇë¹ÜÀíÔ±È¨ÏŞ, ·ÅĞÄ,ÕâÊÇÎªÁËÄÜ¹»½«¼Æ»®ÈÎÎñÉ¾³ı¡£
+
+## ¿ÉÄÜÓöµ½µÄÎÊÌâ
+- Powershell½Å±¾ÎŞ·¨ÔËĞĞ
+  - ÒÔ¹ÜÀíÔ±È¨ÏŞÔËĞĞPowershell,Ö´ĞĞ`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force`
 
 # UnbanPluginsCN
 A program that is designed to unrestrict banned plugins usage on Chinese Dalamud client.
 
 ## How to use:
 - Run UnbanPluginsCN.exe before starting the game
+- Follow the instructions in the config file
 - All your plugins should be loadable now
 
-## Autostart
-UnbanPluginsCN now supports running as a service, meaning that you do not need to worry about starting it manually anymore.
-### How to setup it as a service:
-- Unpack the archive into any folder (for example: `C:\UnbanPluginsCN\`, `C:\Program Files\UnbanPluginsCN\`)
-- Run `install_service.cmd` as administrator (right click on it)
-- It should be installed and running!
-- Do not run it as a service and as a program at the same time - it will cause issues.
+## Running as a Scheduled Task
+- Right click on `install.ps1`, choose to run with PowerShell
+- PowerShell will ask for admin permissions, this is to allow the script to create a scheduled task
+- The scheduled task will run every time you log in
 
+## Removing the Scheduled Task
+- Right click on `uninstall.ps1`, choose to run with PowerShell
+
+## Possible issues:
+- PowerShell script won't run
+  - Run PowerShell as an administrator and execute `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force`
 
 

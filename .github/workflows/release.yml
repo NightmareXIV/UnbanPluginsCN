@@ -1,0 +1,47 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions: # 添加权限配置
+      contents: write # 授予写入仓库内容的权限
+      packages: write # 如果需要发布包，添加此权限
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "8.0.x"
+      - name: Set System Locale
+        run: |
+          chcp 65001
+          [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+        shell: pwsh
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore /p:UseUTF8CharSet=true
+
+      - name: Publish
+        run: dotnet publish --configuration Release --no-build --output ./output
+
+      - name: Zip Output
+        run: |
+          $OutputEncoding = [System.Text.Encoding]::UTF8
+          [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+          Compress-Archive -Path ./output/* -DestinationPath ./UnbanPluginsCN.zip -Force
+        shell: pwsh
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: UnbanPluginsCN.zip

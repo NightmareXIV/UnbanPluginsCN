@@ -1,23 +1,25 @@
-# ½â³ýCN¿Í»§¶ËBanÏÞÖÆ²å¼þ
- ±¾²å¼þÓÃÓÚ½â³ýÖÐ¹ú¿Í»§¶ËÉÏ£¬È¡Ïû¶ÔÒÑ¾­±»½ûÖ¹µÄ²å¼þÊ¹ÓÃ¡£
+# This program is not relevant anymore. Instead, use Atmo's version of XivLauncher and Dalamud: https://github.com/AtmoOmen/FFXIVQuickLauncher
 
-## ÈçºÎÊ¹ÓÃ
-- ÔÚÆô¶¯ÓÎÏ·»òÕßÆô¶¯ÎÀÔÂÖ®Ç°ÔËÐÐUnbanPluginsCN.exe¡£
-- °´ÕÕÅäÖÃÎÄ¼þµÄÌáÊ¾½øÐÐ²Ù×÷¡£
-- Æô¶¯³É¹¦ºóÄãËùÓÐµÄ²å¼þ¶¼ÄÜÕý³£¼ÓÔØÁË¡£
+# è§£é™¤CNå®¢æˆ·ç«¯Bané™åˆ¶æ’ä»¶
+ æœ¬æ’ä»¶ç”¨äºŽè§£é™¤ä¸­å›½å®¢æˆ·ç«¯ä¸Šï¼Œå–æ¶ˆå¯¹å·²ç»è¢«ç¦æ­¢çš„æ’ä»¶ä½¿ç”¨ã€‚
 
-## ×÷Îª¼Æ»®ÈÎÎñÔËÐÐ
-- ÓÒ¼üµã»÷`install.ps1`, Ñ¡ÔñÊ¹ÓÃPowerShellÔËÐÐ¡£
-- powershell»áÉêÇë¹ÜÀíÔ±È¨ÏÞ, ·ÅÐÄ,ÕâÊÇÎªÁËÄÜ¹»½«¼Æ»®ÈÎÎñÐ´ÈëÏµÍ³¡£
-- ¼Æ»®ÈÎÎñ½«»áÔÚÃ¿´ÎÓÃ»§µÇÂ½ºó×Ô¶¯ÔËÐÐ.
+## å¦‚ä½•ä½¿ç”¨
+- åœ¨å¯åŠ¨æ¸¸æˆæˆ–è€…å¯åŠ¨å«æœˆä¹‹å‰è¿è¡ŒUnbanPluginsCN.exeã€‚
+- æŒ‰ç…§é…ç½®æ–‡ä»¶çš„æç¤ºè¿›è¡Œæ“ä½œã€‚
+- å¯åŠ¨æˆåŠŸåŽä½ æ‰€æœ‰çš„æ’ä»¶éƒ½èƒ½æ­£å¸¸åŠ è½½äº†ã€‚
 
-## É¾³ý¼Æ»®ÈÎÎñ
-- ÓÒ¼üµã»÷`uninstall.ps1`, Ñ¡ÔñÊ¹ÓÃPowerShellÔËÐÐ¡£
-- powershell»áÉêÇë¹ÜÀíÔ±È¨ÏÞ, ·ÅÐÄ,ÕâÊÇÎªÁËÄÜ¹»½«¼Æ»®ÈÎÎñÉ¾³ý¡£
+## ä½œä¸ºè®¡åˆ’ä»»åŠ¡è¿è¡Œ
+- å³é”®ç‚¹å‡»`install.ps1`, é€‰æ‹©ä½¿ç”¨PowerShellè¿è¡Œã€‚
+- powershellä¼šç”³è¯·ç®¡ç†å‘˜æƒé™, æ”¾å¿ƒ,è¿™æ˜¯ä¸ºäº†èƒ½å¤Ÿå°†è®¡åˆ’ä»»åŠ¡å†™å…¥ç³»ç»Ÿã€‚
+- è®¡åˆ’ä»»åŠ¡å°†ä¼šåœ¨æ¯æ¬¡ç”¨æˆ·ç™»é™†åŽè‡ªåŠ¨è¿è¡Œ.
 
-## ¿ÉÄÜÓöµ½µÄÎÊÌâ
-- Powershell½Å±¾ÎÞ·¨ÔËÐÐ
-  - ÒÔ¹ÜÀíÔ±È¨ÏÞÔËÐÐPowershell,Ö´ÐÐ`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force`
+## åˆ é™¤è®¡åˆ’ä»»åŠ¡
+- å³é”®ç‚¹å‡»`uninstall.ps1`, é€‰æ‹©ä½¿ç”¨PowerShellè¿è¡Œã€‚
+- powershellä¼šç”³è¯·ç®¡ç†å‘˜æƒé™, æ”¾å¿ƒ,è¿™æ˜¯ä¸ºäº†èƒ½å¤Ÿå°†è®¡åˆ’ä»»åŠ¡åˆ é™¤ã€‚
+
+## å¯èƒ½é‡åˆ°çš„é—®é¢˜
+- Powershellè„šæœ¬æ— æ³•è¿è¡Œ
+  - ä»¥ç®¡ç†å‘˜æƒé™è¿è¡ŒPowershell,æ‰§è¡Œ`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force`
 
 # UnbanPluginsCN
 A program that is designed to unrestrict banned plugins usage on Chinese Dalamud client.
